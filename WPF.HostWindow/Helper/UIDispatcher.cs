@@ -14,7 +14,7 @@ namespace WPF.HostWindow
         /// 创建一个可以运行 <see cref="Dispatcher"/> 的后台 UI 线程，并返回这个线程的调度器 <see cref="Dispatcher"/>。
         /// </summary>
         /// <param name="name">线程的名称，如果不指定，将使用 “BackgroundUI”。</param>
-        /// <returns>一个可以异步等待的 <see cref="Dispatcher"/>。</returns>
+        /// <returns>一个可以异步等待的<see cref="Dispatcher"/>。</returns>
         public static DispatcherAsyncOperation<Dispatcher> RunNewAsync([CanBeNull] string name = null)
         {
             // 创建一个可等待的异步操作。
