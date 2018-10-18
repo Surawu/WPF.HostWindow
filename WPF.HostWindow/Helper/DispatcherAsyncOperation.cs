@@ -14,7 +14,7 @@ namespace WPF.HostWindow
         /// <summary>
         /// 创建 <see cref="DispatcherAsyncOperation{T}"/> 的新实例。
         /// </summary>
-        private DispatcherAsyncOperation()
+        private DispatcherAsyncOperation() 
         {
         }
 
