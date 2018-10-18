@@ -12,7 +12,7 @@ namespace WPF.HostWindow
         /// 获取一个可用于 await 关键字异步等待的异步等待对象。
         /// 此方法会被编译器自动调用。
         /// </summary>
-        TAwaiter GetAwaiter();
+        TAwaiter GetAwaiter(); 
     }
 
     /// <summary>
