@@ -55,13 +55,12 @@ namespace VisualTargetDemo
         private FrameworkElement CreateMediaElement()
         {
             // Create a MediaElement, and give it some content.
-            Window window = new Window();
+            
             TextBox textBox = new TextBox();
             textBox.Width = 200;
             textBox.Height = 100;
             textBox.Text = "Create a MediaElement, and give it some content";
-            window.Background = Brushes.Blue;
-            window.Content = textBox;
+            //return new SubWindow();
             return textBox;
         }
 

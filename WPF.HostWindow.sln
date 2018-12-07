@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.HostWindow", "WPF.HostW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualTargetDemo", "VisualTargetDemo\VisualTargetDemo.csproj", "{4EB8D037-60CC-4625-B7F4-3FE88C131226}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{98F82E33-0AAB-44A7-81CB-B044D9BE6B7F}"
+	ProjectSection(SolutionItems) = preProject
+		history.md = history.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
