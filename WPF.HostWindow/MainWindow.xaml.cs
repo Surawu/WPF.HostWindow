@@ -64,5 +64,9 @@ namespace WPF.HostWindow
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool MoveWindow(IntPtr hwnd, int x, int y, int cx, int cy, bool repaint);
 
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

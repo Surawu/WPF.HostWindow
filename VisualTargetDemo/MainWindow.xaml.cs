@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms.Integration;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -28,9 +29,9 @@ namespace VisualTargetDemo
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            Player1.Child = CreateMediaElementOnWorkerThread();
-            Player2.Child = CreateMediaElementOnWorkerThread();
-            Player3.Child = CreateMediaElementOnWorkerThread();
+            //Player1.Child = CreateMediaElementOnWorkerThread();
+            //Player2.Child = CreateMediaElementOnWorkerThread();
+            //Player3.Child = CreateMediaElementOnWorkerThread();
         }
 
         private HostVisual CreateMediaElementOnWorkerThread()
@@ -55,13 +56,13 @@ namespace VisualTargetDemo
         private FrameworkElement CreateMediaElement()
         {
             // Create a MediaElement, and give it some content.
-            
+
             TextBox textBox = new TextBox();
             textBox.Width = 200;
             textBox.Height = 100;
             textBox.Text = "Create a MediaElement, and give it some content";
             //return new SubWindow();
-            return textBox;
+            return new FormsHost();
         }
 
         private void MediaWorkerThread(object arg)

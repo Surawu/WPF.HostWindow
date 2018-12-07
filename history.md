@@ -2,3 +2,4 @@
 ==========================
 
 * Test(): 无法将SubWindow在主窗体显示；并且在主窗体显示的控件（TextBox等）无法编辑
+* Testing(): 尝试将WinForm放入WPF Grid里，看下能不能显示

@@ -13,8 +13,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <local:VisualWrapper Grid.Column="0" Width="200" Height="100" x:Name="Player1"/>
+        <local:FormsHost />
+        <!--<local:VisualWrapper Grid.Column="0" Width="200" Height="100" x:Name="Player1"/>
         <local:VisualWrapper Grid.Column="1" Width="200" Height="100" x:Name="Player2"/>
-        <local:VisualWrapper Grid.Column="2" Width="200" Height="100" x:Name="Player3"/>
+        <local:VisualWrapper Grid.Column="2" Width="200" Height="100" x:Name="Player3"/>-->
     </Grid>
 </Window>
