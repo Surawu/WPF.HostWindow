@@ -15,9 +15,11 @@ namespace VisualTargetDemo
             base.OnInitialized(e);
 
             WindowsFormsHost formsHost = new WindowsFormsHost();
-            var btn = new System.Windows.Forms.Button();
-            btn.Text = "System.Windows.Forms.Button";
-            formsHost.Child = btn;
+            var txt = new System.Windows.Forms.TextBox
+            {
+                Text = "System.Windows.Forms.TextBox"
+            };
+            formsHost.Child = txt;
 
             this.Children.Add(formsHost);
         }

@@ -23,10 +23,5 @@ namespace WPF.HostWindow
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("sub window button");
-        }
     }
 }

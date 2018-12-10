@@ -66,7 +66,7 @@ namespace WPF.HostWindow
 
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-
+            e.Handled = true;
         }
     }
 }

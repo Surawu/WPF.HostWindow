@@ -30,7 +30,7 @@ namespace VisualTargetDemo
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             //Player1.Child = CreateMediaElementOnWorkerThread();
-            //Player2.Child = CreateMediaElementOnWorkerThread();
+            Player2.Child = CreateMediaElementOnWorkerThread();
             //Player3.Child = CreateMediaElementOnWorkerThread();
         }
 
@@ -48,7 +48,7 @@ namespace VisualTargetDemo
             thread.Start(hostVisual);
 
             // Wait for the worker thread to spin up and create the VisualTarget.
-            s_event.WaitOne();
+            S_event.WaitOne();
 
             return hostVisual;
         }
@@ -62,7 +62,7 @@ namespace VisualTargetDemo
             textBox.Height = 100;
             textBox.Text = "Create a MediaElement, and give it some content";
             //return new SubWindow();
-            return new FormsHost();
+            return textBox;
         }
 
         private void MediaWorkerThread(object arg)
@@ -71,7 +71,7 @@ namespace VisualTargetDemo
             // calling thread, so that it can continue without waiting for us.
             HostVisual hostVisual = (HostVisual)arg;
             VisualTargetPresentationSource visualTargetPS = new VisualTargetPresentationSource(hostVisual);
-            s_event.Set();
+            S_event.Set();
 
             // Create a MediaElement and use it as the root visual for the
             // VisualTarget.
@@ -83,5 +83,12 @@ namespace VisualTargetDemo
         }
 
         private static AutoResetEvent s_event = new AutoResetEvent(false);
+
+        public static AutoResetEvent S_event { get => s_event; set => s_event = value; }
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
