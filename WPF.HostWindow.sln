@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{98F82E33
 		history.md = history.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultithreadedUI", "MultithreadedUI\MultithreadedUI.csproj", "{E04B135A-794D-4050-BB70-38F902674E9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbedWindow", "EmbedWindow\EmbedWindow.csproj", "{51BFA2A6-3625-492E-A6BD-BA50369CC29A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{4EB8D037-60CC-4625-B7F4-3FE88C131226}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EB8D037-60CC-4625-B7F4-3FE88C131226}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EB8D037-60CC-4625-B7F4-3FE88C131226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E04B135A-794D-4050-BB70-38F902674E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04B135A-794D-4050-BB70-38F902674E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04B135A-794D-4050-BB70-38F902674E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04B135A-794D-4050-BB70-38F902674E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51BFA2A6-3625-492E-A6BD-BA50369CC29A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51BFA2A6-3625-492E-A6BD-BA50369CC29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51BFA2A6-3625-492E-A6BD-BA50369CC29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51BFA2A6-3625-492E-A6BD-BA50369CC29A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
