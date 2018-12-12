@@ -69,7 +69,8 @@ namespace MultithreadedUI
         {
             var childHandle = new WindowInteropHelper((SubWindow)sender).Handle;
             SetParent(childHandle, parentHwnd.Handle);
-            SetWindowLongA(childHandle, GWL_EXSTYLE, (int)WS_CHILD);// RIGHT
+            long oldstyle = GetWindowLong(childHandle, GWL_STYLE);
+            SetWindowLongA(childHandle, GWL_STYLE, (int)oldstyle & (~((int)WS_CAPTION | (int)WS_CAPTION_2)));
             MoveWindow(childHandle, 0, 0, 300, 300, true);
 
         }
@@ -78,16 +79,19 @@ namespace MultithreadedUI
         private const int WS_VISIBLE = 0x10000000;
 
         /// <summary> 
-        /// window的扩展样式 
+        /// 带有外边框和标题的windows的样式 
         /// </summary> 
-        public const int GWL_EXSTYLE = -20;
-        public const long WS_CHILD = 0x40000000L;
+        public const long WS_CAPTION = 0x00C00000L;
+        public const long WS_CAPTION_2 = 0X00C0000L;
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern long SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
 
         [DllImport("user32.dll", EntryPoint = "SetWindowLongA", SetLastError = true)]
         public static extern int SetWindowLongA([In()] System.IntPtr hWnd, int nIndex, int dwNewLong);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern long GetWindowLong(IntPtr handle, int style);
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool MoveWindow(IntPtr hwnd, int x, int y, int cx, int cy, bool repaint);

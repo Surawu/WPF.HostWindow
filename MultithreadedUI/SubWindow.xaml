@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MultithreadedUI"
         xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-        WindowStyle="None"
         mc:Ignorable="d"
         Title="SubWindow" Height="300" Width="300">
     <Grid>

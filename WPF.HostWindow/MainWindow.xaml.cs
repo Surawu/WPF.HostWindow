@@ -49,11 +49,22 @@ namespace WPF.HostWindow
         {
             var childHandle = new WindowInteropHelper((Window1)sender).Handle;
             SetParent(childHandle, parentHwnd.Handle);
+            long oldstyle = GetWindowLong(childHandle, GWL_STYLE);
+            SetWindowLongA(childHandle, GWL_STYLE, (int)oldstyle & (~((int)WS_CAPTION | (int)WS_CAPTION_2)));
             MoveWindow(childHandle, 0, 0, 300, 300, true);
         }
 
         private const int GWL_STYLE = (-16);
         private const int WS_VISIBLE = 0x10000000;
+
+        /// <summary> 
+        /// 带有外边框和标题的windows的样式 
+        /// </summary> 
+        public const long WS_CAPTION = 0x00C00000L;
+        public const long WS_CAPTION_2 = 0X00C0000L;
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern long GetWindowLong(IntPtr handle, int style);
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern long SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
