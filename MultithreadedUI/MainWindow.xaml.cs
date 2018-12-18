@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -28,9 +29,11 @@ namespace MultithreadedUI
             Loaded += OnLoaded;
         }
 
-        private async void OnLoaded(object sender, RoutedEventArgs e)
+        private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            await UIDispatcher.CreateElementAsync<SubWindow>((HwndSource)PresentationSource.FromVisual(this));
+            UIDispatcher.CreateElement<SubWindow>((HwndSource)PresentationSource.FromVisual(this));
+
+            Trace.WriteLine("PLC OnLoaded");
         }
 
         private void OnPreviewKeyDown(object sender, KeyEventArgs e)

@@ -56,7 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\UIDispatcher.cs" />
-    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Helper\NativeMethods.cs" />
     <Compile Include="SubWindow.xaml.cs">
       <DependentUpon>SubWindow.xaml</DependentUpon>
     </Compile>

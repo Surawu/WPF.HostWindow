@@ -31,7 +31,7 @@ namespace WPF.HostWindow
                     // 获取关联此后台线程的 Dispatcher。
                     var dispatcher = Dispatcher.CurrentDispatcher;
 
-                    // 设置此线程的 SynchronizationContext，以便此线程上 await 之后能够返回此线程。
+                    // 这句话是为了确保创建的新UI线程里执行的async/await代码在await异步等待之后能够继续回到此UI线程，而不是随便从线程池找一个线程执行
                     SynchronizationContext.SetSynchronizationContext(
                         new DispatcherSynchronizationContext(dispatcher));
 
